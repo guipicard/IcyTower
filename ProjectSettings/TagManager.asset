@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Snowman
   - Walls
+  - Destroyer
   layers:
   - Default
   - TransparentFX
@@ -15,10 +16,10 @@ TagManager:
   - UI
   - Ghost
   - BackGround
-  - Destroy
-  - Fire
-  - FireJump
-  - Snowmen
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

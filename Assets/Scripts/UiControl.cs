@@ -26,7 +26,7 @@ public class UiControl : MonoBehaviour
 
     void Update()
     {
-        if (p.highestPlatform % 50.0f == 0)
+        if (p.highestPlatform % 10 == 0)
         {
             lvl = (p.highestPlatform / 50.0f) + 1.0f;
         }
