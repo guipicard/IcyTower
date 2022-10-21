@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8949175910597738859}
   - component: {fileID: -2317534932502430722}
   - component: {fileID: 70094287346059344}
-  - component: {fileID: 6864318140933097599}
   m_Layer: 11
   m_Name: snowman 2
   m_TagString: Snowman
@@ -132,15 +131,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &6864318140933097599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8281791414187078007}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 710bc75c80f36f44bb2d5d624c50af13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

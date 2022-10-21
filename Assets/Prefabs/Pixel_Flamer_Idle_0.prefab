@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8283176946715176302}
   - component: {fileID: 6465010660847407759}
   - component: {fileID: 7908347155414564440}
+  - component: {fileID: 4264009077908216509}
   m_Layer: 0
   m_Name: Pixel_Flamer_Idle_0
   m_TagString: Untagged
@@ -144,5 +145,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481febf4d7fdeb04eb5005e9e5ff2b41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstacleRayDistance: 0
+  PlayerRay: {fileID: 2895626128866340794}
+  highestPlatform: 0
+  Score: 0
   m_Speed: 5
   m_jumpForce: 10
+--- !u!95 &4264009077908216509
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2895626128866340794}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ae5abde8f8e29b446ba24b56f5de32e9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

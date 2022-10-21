@@ -127,25 +127,28 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.RightShift))
         {
+            rayKillTimer += Time.deltaTime;
             RaycastHit2D hitObstacle = Physics2D.Raycast(transform.position, Vector2.right * new Vector2(m_Direction, 0.0f), obstacleRayDistance);
             if (hitObstacle.collider != null)
             {
                 if (hitObstacle.collider.CompareTag("Snowman") && hitObstacle.distance <= 1.3f)
                 {
-                    rayKillTimer += Time.deltaTime;
-                    if (hitObstacle.distance <= 0.3f)
+                    if (hitObstacle.distance <= 0.4f)
                     {
-                        if (rayKillTimer >= 0.3f)
+                        if (rayKillTimer >= 0.2f)
                         {
                             Destroy(hitObstacle.collider.gameObject);
                             Score++;
                             rayKillTimer = 0;
                         }
                     }
-                    else if (rayKillTimer >= 0.5f)
+                    else if (rayKillTimer >= 0.4f)
                     {
                         Destroy(hitObstacle.collider.gameObject);
                         Score++;
+                    }
+                    else if (rayKillTimer >= 1.0f)
+                    {
                         rayKillTimer = 0;
                     }
                 }
