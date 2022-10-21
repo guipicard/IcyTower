@@ -5,10 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class CameraBehaviour : MonoBehaviour
 {
+    [SerializeField]
+    private float m_SpeedIncrements;
+    [SerializeField]
+    private int m_LvlIncrement;
+    [SerializeField]
+    private float m_Speed;
+
     private Player p;
     private Transform m_Target;
     float lastLvlIncrement;
-    private float m_Speed = 1.0f;
+    
 
 
     [SerializeField]
@@ -20,7 +27,7 @@ public class CameraBehaviour : MonoBehaviour
     private void Start()
     {
         lastLvlIncrement = 0;
-        m_Speed = 1.0f + (1.0f * (lastLvlIncrement / 10));
+        m_Speed = 1.0f + (m_Speed * (lastLvlIncrement / m_LvlIncrement));
         repeatIndex = 1;
         p = FindObjectOfType<Player>();
         if (p != null)
@@ -40,26 +47,24 @@ public class CameraBehaviour : MonoBehaviour
     private void CameraFollow()
     {
         transform.Translate(Vector3.up * m_Speed * Time.deltaTime);
-        // increase speed each 50 platforms
-        if (p.highestPlatform % 50 == 0 && p.highestPlatform >= 50)
+        // increase speed each 10 platforms
+        if (p.highestPlatform % 10 == 0 && p.highestPlatform >= 10)
         {
             lastLvlIncrement = p.highestPlatform;
-            m_Speed = m_Speed + (0.8f * (lastLvlIncrement / 50));
+            m_Speed += m_SpeedIncrements;
         }
 
         Vector3 position = m_Target.position;
         if (position.y - transform.position.y > 4.0f)
         {
-            position.x = transform.position.x;
-            position.z = transform.position.z;
             if (transform.position.y != position.y)
             {
-                m_Speed = 5.0f + (0.8f * (lastLvlIncrement / 50));
+                m_Speed = 5.0f + (m_SpeedIncrements * (lastLvlIncrement / m_LvlIncrement));
             }
         }
         else
         {
-            m_Speed = 1.0f + (0.8f * (lastLvlIncrement / 50));
+            m_Speed = 1.0f + (m_SpeedIncrements * (lastLvlIncrement / m_LvlIncrement));
         }
     }
 

@@ -36,10 +36,13 @@ public class Platform : MonoBehaviour
         float newSnowmanX = Random.Range(-1.0f, 1.0f);
 
         GameObject newSnowman = Instantiate(snowman);
-        newSnowman.transform.SetParent(transform);
+        if (newSnowman != null)
+        {
+            newSnowman.transform.SetParent(transform);
 
-        float platformPosition = transform.position.y + 0.6f;
-        Vector3 newSnowmanPosition = new Vector3(transform.position.x + newSnowmanX, platformPosition, 0);
-        newSnowman.transform.position = newSnowmanPosition;
+            float platformPosition = transform.position.y + 0.6f;
+            Vector3 newSnowmanPosition = new Vector3(transform.position.x + newSnowmanX, platformPosition, 0);
+            newSnowman.transform.position = newSnowmanPosition;
+        }
     }
 }

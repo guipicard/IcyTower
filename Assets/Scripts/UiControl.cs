@@ -26,13 +26,16 @@ public class UiControl : MonoBehaviour
 
     void Update()
     {
-        if (p.highestPlatform % 50.0f == 0)
+        if (p != null)
         {
-            lvl = (p.highestPlatform / 50.0f) + 1.0f;
-        }
+            if (p.highestPlatform % 10 == 0)
+            {
+                lvl = p.highestPlatform / 10;
+            }
         Height.GetComponent<Text>().text = "Height:\n" + p.highestPlatform;
         Score.GetComponent<Text>().text = "Score:\n" + p.Score;
-        Level.GetComponent<Text>().text = "Level:\n" + lvl; 
+        Level.GetComponent<Text>().text = "Level:\n" + lvl;
+        }
     }
 
     public void Play()

@@ -810,7 +810,7 @@ Transform:
   - {fileID: 1745300341}
   - {fileID: 1951683282}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -824,6 +824,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73016de8cf536ef46a308fe10ce6af69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SpeedIncrements: 0.1
+  m_LvlIncrement: 10
+  m_Speed: 1
   repeats:
   - {fileID: 575521328}
   - {fileID: 428649906}
@@ -2032,7 +2035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2895626128866340796, guid: cb78a5a82d9ed6d43869dc5a3c1eb2ce, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2895626128866340796, guid: cb78a5a82d9ed6d43869dc5a3c1eb2ce, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2104,7 +2107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7908347155414564440, guid: cb78a5a82d9ed6d43869dc5a3c1eb2ce, type: 3}
       propertyPath: obstacleRayDistance
-      value: 3
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 8283176946715176302, guid: cb78a5a82d9ed6d43869dc5a3c1eb2ce, type: 3}
       propertyPath: m_Size.x
@@ -2149,7 +2152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5873190288228960903, guid: c7a33c7adf7ec974a9c88208d649d1ae, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5873190288228960903, guid: c7a33c7adf7ec974a9c88208d649d1ae, type: 3}
       propertyPath: m_LocalPosition.x

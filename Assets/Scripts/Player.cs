@@ -115,18 +115,7 @@ public class Player : MonoBehaviour
     {
         if (m_rigidbody2D.velocity.y > 0)
         {
-            if (!m_CanMove)
-            {
-                gameObject.layer = 10;
-            }
-            else
-            {
-                gameObject.layer = 6;
-            }
-        }
-        else if (!m_CanMove)
-        {
-            gameObject.layer = 9;
+            gameObject.layer = 6;
         }
         else
         {
@@ -138,24 +127,32 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.RightShift))
         {
+            rayKillTimer += Time.deltaTime;
             RaycastHit2D hitObstacle = Physics2D.Raycast(transform.position, Vector2.right * new Vector2(m_Direction, 0.0f), obstacleRayDistance);
             if (hitObstacle.collider != null)
             {
-                if (hitObstacle.collider.CompareTag("Snowman"))
+                if (hitObstacle.collider.CompareTag("Snowman") && hitObstacle.distance <= 1.3f)
                 {
-                    rayKillTimer += Time.deltaTime;
-                    if (rayKillTimer >= 0.5f)
+                    if (hitObstacle.distance <= 0.4f)
                     {
-                        Destroy(hitObstacle.collider.gameObject);
-                        Score++;
-                        if (rayKillTimer >= 1.0f)
+                        if (rayKillTimer >= 0.2f)
                         {
+                            Destroy(hitObstacle.collider.gameObject);
+                            Score++;
                             rayKillTimer = 0;
                         }
                     }
-
+                    else if (rayKillTimer >= 0.4f)
+                    {
+                        Destroy(hitObstacle.collider.gameObject);
+                        Score++;
+                    }
+                    else if (rayKillTimer >= 1.0f)
+                    {
+                        rayKillTimer = 0;
+                    }
                 }
-                Debug.DrawRay(transform.position, Vector2.right * hitObstacle.distance * new Vector2(m_Direction, 0.0f), Color.red);
+                //Debug.DrawRay(transform.position, Vector2.right * hitObstacle.distance * new Vector2(m_Direction, 0.0f), Color.red);
             }
             m_CanMove = false;
             m_Anim.SetBool("Fire", true);
