@@ -9,6 +9,9 @@ public class UiControl : MonoBehaviour
     [SerializeField]
     private Camera cam;
 
+    public GameObject HighScoreText;
+    public GameObject InputText;
+
     private GameObject Height;
     private GameObject Score;
     private GameObject Level;
@@ -21,6 +24,7 @@ public class UiControl : MonoBehaviour
         Height = GameObject.Find("HeightTxt");
         Score = GameObject.Find("ScoreTxt");
         Level = GameObject.Find("LevelTxt");
+        //HighScoreText = GameObject.Find("HighScore1");
         p = FindObjectOfType<Player>();
     }
 
@@ -32,9 +36,9 @@ public class UiControl : MonoBehaviour
             {
                 lvl = p.highestPlatform / 10;
             }
-        Height.GetComponent<Text>().text = "Height:\n" + p.highestPlatform;
-        Score.GetComponent<Text>().text = "Score:\n" + p.Score;
-        Level.GetComponent<Text>().text = "Level:\n" + lvl;
+            Height.GetComponent<Text>().text = "Height:\n" + p.highestPlatform;
+            Score.GetComponent<Text>().text = "Score:\n" + p.Score;
+            Level.GetComponent<Text>().text = "Level:\n" + lvl;
         }
     }
 

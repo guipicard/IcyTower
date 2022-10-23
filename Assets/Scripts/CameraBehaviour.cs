@@ -9,8 +9,8 @@ public class CameraBehaviour : MonoBehaviour
     private float m_SpeedIncrements;
     [SerializeField]
     private int m_LvlIncrement;
-    [SerializeField]
-    private float m_Speed;
+ 
+    public float m_Speed;
 
     private Player p;
     private Transform m_Target;
